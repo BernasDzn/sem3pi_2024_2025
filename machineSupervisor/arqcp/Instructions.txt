@@ -1,0 +1,13 @@
+Open Powershell as Admin
+
+winget install --interactive --exact dorssel.usbipd-win
+
+Plug in Raspberry Pi
+
+usbipd list
+
+Look for COM port id
+
+usbipd bind --busid comPortId
+
+usbipd attach --wsl --busid comPortId

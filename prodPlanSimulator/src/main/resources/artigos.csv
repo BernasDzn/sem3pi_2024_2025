@@ -1,0 +1,10 @@
+1, HIGH, Cutting, Drilling, Milling
+2, MEDIUM, Engraving, Etching
+3, HIGH, Molding
+4, MEDIUM, Additive Manufacturing
+5, MEDIUM, Turning, Facing, Knurling
+6, LOW, Cutting, Shaping
+7, LOW, Bending, Folding
+8, LOW, Punching, Shearing, Perforating
+9, MEDIUM, Welding
+10, HIGH, Casting, Forging

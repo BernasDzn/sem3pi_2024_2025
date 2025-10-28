@@ -1,0 +1,36 @@
+@startuml
+'skinparam monochrome true
+skinparam packageStyle rectangle
+'skinparam shadowing false
+
+skinparam rectangle {
+    borderColor transparent
+}
+
+title Use Case Diagram
+
+left to right direction
+
+    actor "Production\nManager"
+    actor "Plant Floor\nManager"
+
+rectangle {
+
+    usecase "USBD5 - Know orders to be delivered\nwithin time frame" as USBD5
+    usecase "USBD6 - Know types of workstations\nused in a order" as USBD6
+    usecase "USBD7 - Know materials/components\nto be ordered" as USBD7
+    usecase "USBD8 - Know the different operations\na factory supports" as USBD8
+    usecase "USEI3 - Calculate total production\ntime for items" as USEI3
+    usecase "USEI5 - List machine operation times" as USEI5
+
+    "Production\nManager" --> USBD5
+    "Production\nManager" --> USBD6
+    "Production\nManager" --> USBD7
+    "Plant Floor\nManager" --> USBD8
+    "Production\nManager" --> USEI3
+    "Production\nManager" --> USEI5
+
+}
+
+
+@enduml

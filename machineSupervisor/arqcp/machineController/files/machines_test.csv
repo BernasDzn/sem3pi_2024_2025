@@ -1,0 +1,10 @@
+id;name;min_temperature;max_temperature;temperature_unit;min_humidity;max_humidity;humidity_unit;buffer_lenght;median_window
+100;Machine 1;-5;20;Celsius;0;90;Percentage;5;5
+101;Machine 2;-10;21;Celsius;10;90;Percentage;9;5
+102;Machine 3;-15;25;Celsius;20;90;Percentage;5;5
+103;Machine 4;-20;40;Celsius;30;90;Percentage;10;5
+104;Machine 5;1;5;Celsius;20;60;Percentage;8;5
+105;Machine 6;2;5;Celsius;24;40;Percentage;8;5
+106;Machine 7;5;100;Celsius;10;30;Percentage;5;5
+107;Machine 8;-2;5;Celsius;11;65;Percentage;5;5
+108;Machine 9;-1;5;Celsius;4;30;Percentage;5;5

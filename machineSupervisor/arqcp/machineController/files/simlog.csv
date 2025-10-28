@@ -1,0 +1,7 @@
+machine_id;op_id;op_name;start_time
+101;5;cutting;0
+102;6;drilling;12
+101;5;cutting;12
+101;5;cutting;24
+103;1;grinding;40
+104;2;grinding;45

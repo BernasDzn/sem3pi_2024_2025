@@ -1,0 +1,28 @@
+@startuml
+
+digraph G {
+    // Define nodes with IDs
+    pot_base_finishing [label="Pot base finishing", shape=rectangle];
+    pot_base_pressing_final [label="Final pot base pressing", shape=rectangle];
+    pot_base_pressing_initial [label="Initial pot base pressing", shape=rectangle];
+    cooltube [label="Cooltube 2210XP", shape=hexagon];
+
+    // Stainless steel handle shared across multiple edges
+    stainless_steel_handle [label="Stainless steel handle model U6", shape=hexagon];
+
+    // Add relationships
+    "Pot handles riveting" -> stainless_steel_handle [label="2.0"];
+    pot_base_finishing -> pot_base_pressing_final [label="1.0"];
+    pot_base_pressing_final -> cooltube [label="5.0"];
+    pot_base_pressing_initial -> cooltube [label="5.0"];
+
+    // Example of reusing a node
+    disc_cutting [label="Disc cutting", shape=rectangle];
+    stainless_steel_disc [label="Stainless steel disc", shape=ellipse];
+
+    disc_cutting -> cooltube [label="1.0"];
+    disc_cutting -> stainless_steel_disc [label="1.0"];
+    stainless_steel_disc -> "300x300 mm 5 mm stainless steel sheet" [label="1.0"];
+}
+
+@enduml

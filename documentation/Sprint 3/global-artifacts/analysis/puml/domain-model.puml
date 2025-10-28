@@ -1,0 +1,189 @@
+@startuml domain model
+
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+'skinparam linetype ortho
+skinparam classAttributeIconSize 0
+hide circle
+top to bottom direction
+hide methods
+
+title Domain Model
+
+class Factory{
+    - name
+    - type
+}
+
+class Product{
+    - name
+    - description
+}
+
+class "Component"{
+    - name
+    - description
+}
+
+class Warehouse{
+    - name
+    - location
+    - description
+    - products
+}
+
+class "Bill Of Materials" {
+    - components
+}
+
+class Workstation {
+    - name
+    - operation
+    - time
+    -description
+    - machine
+    - operator
+}
+
+class "Workstation Type"{
+    - type name
+}
+
+class Machine{
+    - name
+    - serial number
+    - type
+    - description
+}
+
+class "Machine Type"{
+
+}
+
+class "Robotic Units"{
+
+}
+
+class "Automated Machines"{
+
+}
+
+class "Human operated Machines"{
+
+}
+
+class "Factory Operator"{
+
+}
+
+class Operation{
+    - name
+    - description
+}
+
+class "Product Family"{
+    - name
+    - description
+}
+
+class "Customer"{
+    - name
+    - vatin/nif
+    - contact info
+    - address
+}
+
+class Address{
+    - street
+    - city
+    - postalCode
+    - country
+}
+
+class "Customer Order"{
+    - date
+    - product list
+}
+
+class "Production Order"{
+    - date
+    - product list
+    - workstation list
+    - time
+}
+
+class "Supplier"{
+    - name
+    - vatin
+}
+
+class Employee{
+    - name
+    - nif
+    - role
+}
+
+class Individual{
+
+}
+
+class Company{
+
+}
+
+class "Bill of Operations"{
+    - operations
+}
+
+class "Machine Maintenance"{
+    - date
+    - time
+    - machine
+    - notes
+}
+
+class "Machine Supervisor"{
+
+}
+
+
+Customer "1" -u-> "1" Address : "lives at >"
+Factory "1" -u-> "1" Address : "located at >"
+"Supplier" "1" -u-> "1" Address : "located at >"
+Individual -d-|> Customer
+Company -d-|> Customer
+Factory "1" --> "1..*" Warehouse : "owns >"
+Factory "1" --> "1..*" Machine : "owns >"
+Factory "1" --> "*" Employee : "employs >"
+"Production Manager" -u-|> Employee
+"Plant Floor Manager" -u-|> Employee
+"Machine Supervisor" -u-|> Employee
+"Factory Operator" -u-|> Employee
+"Robotic Units" -u-|> "Machine Type"
+"Automated Machines" -u-|> "Machine Type"
+"Human operated Machines" -u-|> "Machine Type"
+Machine "1" --> "1" "Machine Type" : "is of type >"
+Workstation "1" --> "1" "Workstation Type" : "is of type >"
+"Workstation Type" "1" --> "*" Operation : "performs >"
+Machine "1" --> "0..*" Workstation : "assigned to >"
+"Factory Operator" "0..*" --> "1" Workstation : "assigned to >"
+Customer "1" --> "*" "Customer Order" : "places >"
+"Customer Order" "1" --> "1..*" "Production Order" : "leads to >"
+Product "*" -u-> "1" "Product Family" : "belongs to >"
+"Product Family" "1" --> "1" "Bill of Operations" : "has >"
+Supplier "*" --> "*" "Component" : "sells >"
+"Bill of Operations" "1" --> "*" Operation : "contains >"
+"Bill Of Materials" "1" --> "*" "Component" : "contains >"
+Product "1" --> "*" "Bill Of Materials" : "is made with >"
+Machine "1" --> "*" "Machine Maintenance" : "requires >"
+"Machine Maintenance" "1" --> "1" "Machine Supervisor" : "is done by >"
+"Customer Order" "*" --> "*" Address : "delivered to >"
+Product "*" --> "*" "Customer Order" : "is listed at >"
+Product "*" --> "*" "Production Order" : "is listed at >"
+Workstation "*" --> "*" "Production Order" : "are used for >"
+"Factory Operator" "*" --> "*" "Human operated Machines" : "operates >"
+Product "*" --> "1" Warehouse : "is stored at >"
+"Component" "*" --> "1" Warehouse : "is stored at >"
+
+@enduml

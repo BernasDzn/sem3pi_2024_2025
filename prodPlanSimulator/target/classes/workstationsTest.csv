@@ -1,0 +1,7 @@
+﻿workstation;name_oper;time
+ws11;CUT;21
+ws21;DRILL;26
+ws31;SCREW;50
+ws41;POLISH;76
+ws51;VARNISH;101
+ws61;PACK;162

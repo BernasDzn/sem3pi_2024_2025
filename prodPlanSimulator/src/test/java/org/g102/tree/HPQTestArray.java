@@ -1,0 +1,191 @@
+package org.g102.tree;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+public class HPQTestArray {
+
+    HeapPriorityQueue<Integer, String> instance;
+
+    Integer[] keys = {20, 15, 10, 13, 8, 12, 40, 30, 5, 21};
+    String[] values = {"vinte", "quinze", "dez", "treze", "oito", "doze", "quarenta", "trinta", "cinco", "vinteeum"};
+
+    @BeforeEach
+    public void setUp() {
+        instance = new HeapPriorityQueue<>(keys, values);
+    }
+
+    @Test
+    public void testParent() {
+        System.out.println("parent");
+
+        assertEquals(instance.parent(8), 3);
+        assertEquals(instance.parent(2), 0);
+    }
+
+    @Test
+    public void testLeft() {
+        System.out.println("left");
+        int j = 4;
+
+        int expResult = 9;
+        int result = instance.left(j);
+        assertEquals(expResult, result);
+
+    }
+
+    @Test
+    public void testRight() {
+        System.out.println("right");
+        int j = 1;
+
+        int expResult = 4;
+        int result = instance.right(j);
+        assertEquals(expResult, result);
+
+    }
+
+    @Test
+    public void testHasLeft() {
+        System.out.println("hasLeft");
+        int j = 3;
+        int k = 12;
+
+        boolean expResult = true;
+        boolean result = instance.hasLeft(j);
+        assertEquals(expResult, result);
+
+        expResult = false;
+        result = instance.hasLeft(k);
+        assertEquals(expResult, result);
+
+    }
+
+    @Test
+    public void testHasRight() {
+        System.out.println("hasRight");
+        int j = 0;
+        int k = 4;
+
+        boolean expResult = true;
+        boolean result = instance.hasRight(j);
+        assertEquals(expResult, result);
+
+        expResult = false;
+        result = instance.hasRight(k);
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testSwap() {
+        System.out.println("swap");
+        int i = 0;
+        int j = 3;
+
+        instance.swap(i, j);
+        Entry<Integer, String> pq = instance.min();
+        Integer k = pq.getKey();
+
+        assertEquals(k, Integer.valueOf(13));
+
+    }
+
+    @Test
+    public void testPercolateUp() {
+        System.out.println("PercolateUp");
+
+        instance.insert(7, "sete");
+
+        Integer[] keyshp = {5, 7, 10, 13, 8, 12, 40, 30, 15, 21, 20};
+
+        for (int i = 0; i < instance.size(); i++) {
+            assertEquals(keyshp[i], instance.heap.get(i).getKey());
+            System.out.println(instance.heap.get(i).getKey());
+        }
+    }
+
+    @Test
+    public void testPercolateDown() {
+        System.out.println("PercolateDown");
+
+        Entry<Integer, String> pq = instance.removeMin();
+
+        Integer[] keyshp = {8, 13, 10, 15, 20, 12, 40, 30, 21};
+
+        for (int i = 0; i < instance.size(); i++) {
+            assertEquals(keyshp[i], instance.heap.get(i).getKey());
+            System.out.println(instance.heap.get(i).getKey());
+        }
+    }
+
+    @Test
+    public void testBuildHeap() {
+        System.out.println("BuildHeap");
+        Integer[] keyshp = {5, 8, 10, 13, 20, 12, 40, 30, 15, 21};
+
+        for (int i = 0; i < instance.size(); i++) {
+            assertEquals(keyshp[i], instance.heap.get(i).getKey());
+            System.out.print(instance.heap.get(i).getKey());
+            System.out.println(" - "+instance.parent(i));
+        }
+    }
+
+    @Test
+    public void testSize() {
+        System.out.println("size");
+
+        int expResult = 10;
+        int result = instance.size();
+        assertEquals(expResult, result);
+
+    }
+
+    @Test
+    public void testMin() {
+        System.out.println("min");
+
+        Entry<Integer, String> pq = instance.min();
+        Integer k = pq.getKey();
+        String v = pq.getValue();
+
+        assertEquals(k, Integer.valueOf(5));
+        assertEquals(v, "cinco");
+    }
+
+    @Test
+    public void testInsert() {
+        System.out.println("insert");
+        instance.insert(3, "tres");
+
+        Entry<Integer, String> pq = instance.min();
+        Integer k = pq.getKey();
+        String v = pq.getValue();
+
+        assertEquals(v, "tres");
+    }
+
+    @Test
+    public void testIsEmpty() {
+        System.out.println("isEmpty");
+
+        assertEquals(false, instance.isEmpty());
+    }
+
+    @Test
+    public void testRemoveMin() {
+        System.out.println("removeMin");
+
+        Entry<Integer, String> pq1 = instance.removeMin();
+        String v1 = pq1.getValue();
+
+        assertEquals(v1, "cinco");
+
+        Entry<Integer, String> pq2 = instance.min();
+        String v2 = pq2.getValue();
+
+        assertEquals(v2, "oito");
+    }
+
+}

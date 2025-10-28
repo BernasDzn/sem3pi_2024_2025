@@ -1,0 +1,7 @@
+id;name;min_temperature;max_temperature;temperature_unit;min_humidity;max_humidity;humidity_unit;buffer_lenght;median_window
+4123;Machine 4123;-4;23;Celsius;20;71;Percentage;6;2
+5124;Machine 5124;3;8;Celsius;14;49;Percentage;4;3
+7235;Machine 7235;9;39;Celsius;11;90;Percentage;4;3
+8541;Machine 8541;-5;29;Celsius;5;31;Percentage;9;6
+9847;Machine 9847;1;29;Celsius;13;75;Percentage;3;2
+9875;Machine 9875;5;90;Celsius;5;7;Percentage;10;7

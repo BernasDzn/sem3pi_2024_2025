@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title Register Data Geral Sequence
+
+participant User as USER
+participant UI as UI
+participant "<?>Controller" as CTRL
+participant "Domain Layer" as DOMAIN
+participant JDBC as JDBC
+participant "Database" as DB
+
+loop until the data is correct according to the user
+    loop until the data is correct according to requirements
+        UI -> USER : Requests some type of data
+        USER -> UI : Writes the data
+        UI -> CTRL : isValidData(data)
+        CTRL -> DOMAIN : isValidData(data)
+        DOMAIN --> CTRL : boolean isValid
+        CTRL --> UI : correct/incorrect data
+    end
+    UI --> UI : save data
+    UI -> USER : ask if data is correct
+
+    note right
+            (after all required data is introduced)
+    end note
+    USER -> UI : data is correct/incorrect
+end
+    UI -> CTRL : saveData(data)
+    CTRL -> CTRL : createDataObject
+    CTRL -> DOMAIN : saveData(data)
+    DOMAIN -> JDBC : saveDataQuery(data)
+    JDBC -> JDBC : create query
+    JDBC -> DB : executeQuery()
+    DB -> JDBC : query result
+    JDBC -> DOMAIN : query result
+    DOMAIN -> CTRL : query result
+    CTRL -> UI : added to DB successfully/unsuccessfully
+    UI -> USER : added to DB successfully/unsuccessfully
+
+
+
+@enduml

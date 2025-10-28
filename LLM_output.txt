@@ -1,0 +1,23 @@
+Rui Santiago
+
+Rui led the sprint as the Scrum Master and contributed across various stages, including setting up the domain and logical models and coordinating tasks within the team. He focused on project structure and the user session implementation, which kept the project well-organized and user-friendly. Rui's attention to detail was evident in his systematic handling of database integration and physical model instantiation, adapting to new data requirements provided by the client. However, there were challenges due to unanswered client questions, which Rui navigated effectively by making adjustments as new information became available.
+
+Despite starting six days late, Rui’s proactive approach and consistent updates helped minimize potential setbacks. His finalization of database and domain classes exemplifies a strong commitment to project completeness. Overall, Rui’s leadership ensured team alignment and delivery on project tasks, reflecting strong performance.
+Bernardo Cardoso
+
+Bernardo actively contributed to the modeling and simulation aspects, primarily working on Java class structures and logic for machine operation timelines. He was thorough in identifying potential simulation issues, such as debugging wait times and documenting the time complexity of methods. Bernardo's development of PlantUML visualizations and CLI timelines added functional depth to the project, enhancing the simulation’s comprehensiveness and reliability.
+
+His proactive debugging and complexity analysis indicate both a strong technical capability and an understanding of code efficiency. However, there were minor setbacks with implementing the timeline scale, which he resolved quickly. Overall, Bernardo demonstrated technical agility and supported the team’s broader goals, making his performance robust and impactful.
+Francisco Lousada
+
+Francisco was pivotal in simulator development, managing complex data structures and prioritization methods for machine operations. He contributed to logical model design, reworking class structures as needed to improve functionality. Despite the initial ambiguity in client specifications, Francisco made informed assumptions that kept the project on track, adapting as clarifications came in. His focus on testing and method validation strengthened the simulator’s reliability.
+
+Francisco’s approach to problem-solving and team collaboration, along with his initiative in organizing and testing the simulator thoroughly, played a critical role in advancing project objectives. His continuous attention to the simulator’s performance has been a significant asset to the team’s progress.
+Helena Sousa
+
+Helena contributed to the domain model, glossary, and the logical model alongside performing tests and ensuring documentation accuracy. Her role in creating the glossary improved team alignment on terminology, which addressed a key issue in the sprint. Helena’s attention to detail in finalizing models and updating visualization formats (VPP and PUML) provided the team with precise reference points for domain concepts, which facilitated smoother integration across project components.
+
+Her performance shows solid organizational skills and an understanding of project-wide requirements. Though she primarily focused on management and support roles, her work on standardizing terminology and testing enhanced the project’s cohesion, supporting a consistent workflow.
+Overall Project Performance
+
+The team demonstrated commendable effort in tackling sprint tasks despite a late start. They met sprint goals with only minor delays, maintained communication, and adapted efficiently to emerging requirements. The sprint was executed with clear, proactive planning and collaboration. Minor gaps in task distribution led to uneven workload, which could be addressed in future sprints for more balanced contribution. The overall Project Mood rating is 4.5 out of 5, reflecting strong alignment, adaptability, and efficient progress towards project goals.

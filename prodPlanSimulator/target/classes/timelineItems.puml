@@ -1,0 +1,28 @@
+@startuml
+scale 100 as 400 pixels
+concise "item_-1717621040_NORMAL_0" as item_-1717621040_NORMAL_0
+concise "item_-1717620946_NORMAL_0" as item_-1717620946_NORMAL_0
+concise "item_-1717620945_NORMAL_0" as item_-1717620945_NORMAL_0
+concise "item_-1717620944_NORMAL_0" as item_-1717620944_NORMAL_0
+concise "item_-1272861943_NORMAL_0" as item_-1272861943_NORMAL_0
+@0
+item_-1717621040_NORMAL_0 is 100_9875
+@120
+item_-1717621040_NORMAL_0 is DONE #palegreen
+@0
+item_-1717620946_NORMAL_0 is 151_9847
+@90
+item_-1717620946_NORMAL_0 is DONE #palegreen
+@0
+item_-1717620945_NORMAL_0 is 152_9847
+@120
+item_-1717620945_NORMAL_0 is DONE #palegreen
+@0
+item_-1717620944_NORMAL_0 is 153_5124
+@320
+item_-1717620944_NORMAL_0 is DONE #palegreen
+@0
+item_-1272861943_NORMAL_0 is 154_8541
+@600
+item_-1272861943_NORMAL_0 is DONE #palegreen
+@enduml

@@ -1,0 +1,5 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+prodPlanSimulator/src/main/resources/timeline.puml
+prodPlanSimulator/src/main/resources/timeline-0.svg

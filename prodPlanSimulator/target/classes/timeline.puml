@@ -1,0 +1,23 @@
+@startuml
+scale 100 as 200 pixels
+concise "Machine 5124" as 5124
+concise "Machine 8541" as 8541
+concise "Machine 9847" as 9847
+concise "Machine 9847" as 9847
+concise "Machine 9875" as 9875
+@0
+5124 is 1 #palegreen
+8541 is 1 #palegreen
+9847 is 1 #palegreen
+9847 is 1 #palegreen
+9875 is 1 #palegreen
+@90
+9847 is 0 #pink
+@120
+9847 is 0 #pink
+9875 is 0 #pink
+@320
+5124 is 0 #pink
+@600
+8541 is 0 #pink
+@enduml
